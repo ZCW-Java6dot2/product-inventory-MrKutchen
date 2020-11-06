@@ -6,6 +6,18 @@ public class Vitamins {
     private int qty;
     private float price;
 
+    public Vitamins(String name, String brand, int qty, float price) {
+        this.name = name;
+        this.brand = brand;
+        this.qty = qty;
+        this.price = price;
+    }
+
+    public Vitamins() {
+
+    }
+
+
     public String getName() {
         return name;
     }

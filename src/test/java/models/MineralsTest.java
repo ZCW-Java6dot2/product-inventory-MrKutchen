@@ -31,7 +31,7 @@ class MineralsTest {
 
     @Test
     public void setPriceTest() {
-        float expected = (float) 15.00;
+        float expected = 15.00f;
         Minerals testVitamins = new Minerals();
         testVitamins.setPrice(expected);
         Assertions.assertEquals(expected, testVitamins.getPrice());
