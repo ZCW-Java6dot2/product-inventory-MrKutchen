@@ -6,6 +6,14 @@ public class Minerals {
     private int qty;
     private float price;
 
+    public Minerals(String name, String brand, int qty, float price) {
+
+    }
+
+    public Minerals() {
+
+    }
+
     public String getName() {
         return name;
     }

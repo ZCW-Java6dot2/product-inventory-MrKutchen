@@ -6,6 +6,22 @@ import org.junit.jupiter.api.Test;
 class MineralsTest {
 
     @Test
+    public void constructorTest() {
+
+        String expectedName = "Magnesium";
+        String expectedBrand = "Pure";
+        int expectedQty = 60;
+        float expectedPrice = 15.00f;
+
+        Minerals testMinerals = new Minerals(expectedName, expectedBrand, expectedQty, expectedPrice);
+
+        Assertions.assertEquals(expectedName, testMinerals.getName());
+        Assertions.assertEquals(expectedBrand, testMinerals.getBrand());
+        Assertions.assertEquals(expectedQty, testMinerals.getPrice());
+        Assertions.assertEquals(expectedPrice, testMinerals.getPrice());
+    }
+
+    @Test
     public void setNameTest() {
         String expected = "Magnesium";
         Minerals testVitamins = new Minerals();
