@@ -58,4 +58,11 @@ public class Minerals {
     public void setPrice(float price) {
         this.price = price;
     }
+
+    @Override
+    public String toString() {
+        return "MineralServices{" +
+                " Name = " + name + " Brand = " + brand + " Qty = " + qty + " Price = " + price +
+                "}";
+    }
 }

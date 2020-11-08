@@ -1,8 +1,10 @@
 package services;
 
+import models.Minerals;
 import models.Vitamins;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class VitaminsServices {
 
@@ -31,13 +33,9 @@ public class VitaminsServices {
         return result;
     }
 
-    public Vitamins[] findAll() {
-            Vitamins[] vitamins = new Vitamins[inventory.size()];
-            for (int i = 0; i < inventory.size(); i++) {
-                vitamins[i] = inventory.get(i);
-            }
-            return vitamins;
-        }
+    public ArrayList<Vitamins> printAll() {
+        return this.inventory;
+    }
 
     public boolean delete(int nextId) {
         boolean isItemPresent = false;
@@ -46,5 +44,6 @@ public class VitaminsServices {
         }
         return isItemPresent;
     }
+
 }
 

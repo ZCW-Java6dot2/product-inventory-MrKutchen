@@ -16,7 +16,6 @@ public class Vitamins {
     }
 
     public Vitamins() {
-
     }
 
     public int getId() {
@@ -57,5 +56,12 @@ public class Vitamins {
 
     public void setPrice(float price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "VitaminsServices{" +
+                " Name = " + name + " Brand = " + brand + " Qty = " + qty + " Price = " + price +
+                "}";
     }
 }

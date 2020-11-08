@@ -1,8 +1,11 @@
 package services;
 
 import models.Minerals;
+import models.Vitamins;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MineralServices {
 
@@ -31,12 +34,8 @@ public class MineralServices {
         return result;
     }
 
-    public Minerals[] findAll() {
-        Minerals[] mineral = new Minerals[inventory.size()];
-        for (int i = 0; i < inventory.size(); i++) {
-            mineral[i] = inventory.get(i);
-        }
-        return mineral;
+    public ArrayList<Minerals> printAll() {
+        return this.inventory;
     }
 
     public boolean delete(int nextId) {
@@ -45,5 +44,12 @@ public class MineralServices {
             isItemPresent = nextId == i;
         }
         return isItemPresent;
+    }
+
+    @Override
+    public String toString() {
+        return "MineralServices{" +
+                "inventory=" + inventory +
+                '}';
     }
 }
