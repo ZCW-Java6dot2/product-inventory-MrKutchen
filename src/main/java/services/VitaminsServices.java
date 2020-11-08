@@ -1,15 +1,44 @@
 package services;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 import models.Minerals;
 import models.Vitamins;
 
+
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.List;
+
 
 public class VitaminsServices {
 
     private static int nextId = 1;
-    private ArrayList<Vitamins> inventory = new ArrayList<>();
+    private List<Vitamins> inventory = new ArrayList<>();
+
+
+    public void readingJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        try {
+            this.inventory = (ArrayList<Vitamins>) objectMapper.readValue(new File("Mineral.json"), new TypeReference<List<Vitamins>>(){});
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void writeJSON() {
+        ObjectMapper mapper = new ObjectMapper();
+        ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
+        try {
+            writer.writeValue(new File("Vitamins.json"), inventory);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
     public Vitamins create(String name, String brand, int qty, float price) {
@@ -33,7 +62,7 @@ public class VitaminsServices {
         return result;
     }
 
-    public ArrayList<Vitamins> printAll() {
+    public List<Vitamins> printAll() {
         return this.inventory;
     }
 
