@@ -7,14 +7,15 @@ class VitaminsTest {
 
     @Test
     public void constructorTest() {
-
+        int expectedId = 1;
         String expectedName = "Basic Nutrients 2/Day MultiVitamin";
         String expectedBrand = "Thorne";
         int expectedQty = 30;
         float expectedPrice = 30.00f;
 
-        Vitamins testVitamins = new Vitamins(expectedName, expectedBrand, expectedQty, expectedPrice);
+        Vitamins testVitamins = new Vitamins(expectedId, expectedName, expectedBrand, expectedQty, expectedPrice);
 
+        Assertions.assertEquals(expectedId, testVitamins.getId());
         Assertions.assertEquals(expectedName, testVitamins.getName());
         Assertions.assertEquals(expectedBrand, testVitamins.getBrand());
         Assertions.assertEquals(expectedQty, testVitamins.getPrice());

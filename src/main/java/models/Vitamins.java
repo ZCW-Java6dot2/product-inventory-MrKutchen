@@ -1,12 +1,14 @@
 package models;
 
 public class Vitamins {
+    private int id;
     private String name;
     private String brand;
     private int qty;
     private float price;
 
-    public Vitamins(String name, String brand, int qty, float price) {
+    public Vitamins(int id, String name, String brand, int qty, float price) {
+        this.id = id;
         this.name = name;
         this.brand = brand;
         this.qty = qty;
@@ -17,6 +19,13 @@ public class Vitamins {
 
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;

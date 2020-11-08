@@ -82,11 +82,11 @@ public class SneakerTest {
 	    String expected = "OZWEEGO";
 	    
 	    // when (2)
-	    testSneaker = new Sneaker()
-	    testSneaker.setName(expected);
+	    testVitamins = new Sneaker()
+	    testVitamins.setName(expected);
 	    
 	    // then (3)
-	    Assertions.assertEquals(expected, testSneaker.getName());
+	    Assertions.assertEquals(expected, testVitamins.getName());
 	}
 }
 ```
@@ -147,16 +147,16 @@ public class SneakerTest {
         float expectedPrice = 80.00f;
 
         // (3)
-        Sneaker testSneaker = new Sneaker(expectedId, expectedName, expectedBrand,
+        Sneaker testVitamins = new Sneaker(expectedId, expectedName, expectedBrand,
                 expectedSport, expectedQty,expectedPrice);
 
         // (4)
-        Assertions.assertEquals(expectedId, testSneaker.getId());
-        Assertions.assertEquals(expectedName, testSneaker.getName());
-        Assertions.assertEquals(expectedBrand, testSneaker.getBrand());
-        Assertions.assertEquals(expectedSport, testSneaker.getSport());
-        Assertions.assertEquals(expectedQty, testSneaker.getQty());
-        Assertions.assertEquals(expectedPrice, testSneaker.getPrice());
+        Assertions.assertEquals(expectedId, testVitamins.getId());
+        Assertions.assertEquals(expectedName, testVitamins.getName());
+        Assertions.assertEquals(expectedBrand, testVitamins.getBrand());
+        Assertions.assertEquals(expectedSport, testVitamins.getSport());
+        Assertions.assertEquals(expectedQty, testVitamins.getQty());
+        Assertions.assertEquals(expectedPrice, testVitamins.getPrice());
     }
 }
 ```
@@ -248,17 +248,17 @@ public class SneakerServiceTest {
         
         // (2)
         SneakerService sneakerService = new SneakerService();
-        Sneaker testSneaker = SneakerService.create(expectedName, expectedBrand,
+        Sneaker testVitamins = SneakerService.create(expectedName, expectedBrand,
          expectedSport, expectedSize, expectedQty, expectedPrice);
 
         // (3)
-        int actualId = testSneaker.getId();
-        String actualName = testSneaker.getName();
-        String actualBrand = testSneaker.getBrand();
-        String actualSport = testSneaker.getSport();
-        int actualSize = testSneaker.getSize();
-        int actualQty = testSneaker.getQuantity
-        float actualPrice = testSneaker.getPrice();
+        int actualId = testVitamins.getId();
+        String actualName = testVitamins.getName();
+        String actualBrand = testVitamins.getBrand();
+        String actualSport = testVitamins.getSport();
+        int actualSize = testVitamins.getSize();
+        int actualQty = testVitamins.getQuantity
+        float actualPrice = testVitamins.getPrice();
 
         // (4)
         Assertions.assertEquals(Integer.class.getName(), new Integer(actualId).getClass().getName());
